@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import useTodoState from './hooks/useTodoState';
 
 function TodoApp() {
-  const initialTodos = JSON.parse(window.localStorage.getItem('todos') || '[]');
+  const initialTodos = [{ id: 1, task: 'Pet A Monkey', completed: false }];
   const { 
     addTodo, 
     editTodo, 
@@ -17,10 +17,6 @@ function TodoApp() {
     todos, 
     toggleTodo 
   } = useTodoState(initialTodos);
-
-  useEffect(() => {
-    window.localStorage.setItem('todos', JSON.stringify(todos));
-  }, [todos]);
 
   return (
     <Paper 
