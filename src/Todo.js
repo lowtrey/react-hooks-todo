@@ -12,7 +12,7 @@ import useToggleState from './hooks/useToggleState';
 function Todo({ completed, editTodo, id, removeTodo, task, toggleTodo }) {
   const [isEditing, toggle] = useToggleState(false);
   return (
-    <ListItem>
+    <ListItem style={{ height: '64px' }}>
       {isEditing ? <EditTodoForm editTodo={editTodo} id={id} task={task} toggleEditForm={toggle} /> : 
         <>
           <Checkbox tabIndex={-1} checked={completed} onClick={() => toggleTodo(id)} />
