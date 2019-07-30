@@ -9,11 +9,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import useToggleState from './hooks/useToggleState';
 
-function Todo({ completed, id, removeTodo, task, toggleTodo }) {
+function Todo({ completed, editTodo, id, removeTodo, task, toggleTodo }) {
   const [isEditing, toggle] = useToggleState(false);
   return (
     <ListItem>
-      {isEditing ? <EditTodoForm /> : 
+      {isEditing ? <EditTodoForm editTodo={editTodo} id={id} task={task} toggleEditForm={toggle} /> : 
         <>
           <Checkbox tabIndex={-1} checked={completed} onClick={() => toggleTodo(id)} />
           <ListItemText
