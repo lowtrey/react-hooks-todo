@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, memo } from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -44,4 +44,4 @@ function Todo({ completed, id, task }) {
   );
 }
 
-export default Todo;
+export default memo(Todo);
