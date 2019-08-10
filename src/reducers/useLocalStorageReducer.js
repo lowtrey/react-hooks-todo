@@ -7,9 +7,7 @@ function useLocalStorageReducer(key, defaultVal, reducer) {
     try {
       value = JSON.parse(window.localStorage.getItem(key) || String(defaultVal));
     }
-    catch(e) {
-      value = defaultVal;
-    }
+    catch(e) {value = defaultVal;}
     return value;
   });
   // use useEffect to update localStorage when state changes
